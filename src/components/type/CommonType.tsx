@@ -62,3 +62,47 @@ export interface MovieApiResponse {
   };
   request: {};
 }
+
+export interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface GenresData {
+  genres: Genre[];
+}
+
+export interface ApiResponse {
+  data: GenresData;
+  status: number;
+  statusText: string;
+  headers: {
+    [key: string]: string;
+  };
+  config: {
+    transitional: {
+      silentJSONParsing: boolean;
+      forcedJSONParsing: boolean;
+      clarifyTimeoutError: boolean;
+    };
+    adapter: string[];
+    transformRequest: null[];
+    transformResponse: null[];
+    timeout: number;
+    xsrfCookieName: string;
+    xsrfHeaderName: string;
+    maxContentLength: number;
+    maxBodyLength: number;
+    env: {
+      [key: string]: any;
+    };
+    headers: {
+      Accept: string;
+    };
+    method: string;
+    url: string;
+  };
+  request: {
+    [key: string]: any;
+  };
+}
