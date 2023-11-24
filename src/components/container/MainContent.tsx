@@ -7,6 +7,8 @@ import MovieCard from "../card/MovieCard";
 import Loader from "../loader/Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
+const default_year = 2012;
+
 export const MainContent = () => {
   const selectedGenre = useGenreStore((state) => state.genre);
   const [movies, setMovies] = useState<Array<Movie>>([]);
@@ -45,7 +47,7 @@ export const MainContent = () => {
 
   useEffect(() => {
     (async () => {
-      await loadMovies(2012);
+      await loadMovies(default_year);
     })();
   }, [selectedGenre]);
 
@@ -58,7 +60,7 @@ export const MainContent = () => {
         loader={<Loader />}
         endMessage={
           <p className="no-more-data" style={{ textAlign: "center" }}>
-            <b>Yay! You have seen it all</b>
+            <b>No more data to load...</b>
           </p>
         }
       >
