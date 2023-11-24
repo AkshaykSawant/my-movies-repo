@@ -18,14 +18,11 @@ export const MainContent = () => {
   const fetchMoreData = async () => {
     try {
       setYear((prev) => prev + 1);
-      const response: MovieApiData = await fetchMovieData(
-        year + 1,
-        selectedGenre
-      );
-      if (response.results.length === 0) {
+      const results = await fetchMovieData(year + 1, selectedGenre);
+      if (results.length === 0) {
         setHasMore(false);
       }
-      setMovies((state) => [...state, ...response.results]);
+      setMovies((state) => [...state, ...results]);
     } catch (error) {
       console.error("Error fetching movies:", error);
     }
@@ -35,11 +32,11 @@ export const MainContent = () => {
     try {
       setHasMore(true);
       setYear(2012);
-      const response = await fetchMovieData(initialYear, selectedGenre);
-      if (response.results.length === 0) {
+      const results = await fetchMovieData(initialYear, selectedGenre);
+      if (results.length === 0) {
         setHasMore(false);
       }
-      setMovies(response.results);
+      setMovies(results);
     } catch (error) {
       console.error("Error loading movies:", error);
     }

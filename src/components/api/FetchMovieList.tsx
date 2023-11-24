@@ -10,7 +10,7 @@ export const fetchMovieData = async (year: number, genre: string) => {
     const response: MovieApiResponse =
       await axios.get(`${BASE_URL}?api_key=${API_KEY}&sort_by=popularity.desc
       &primary_release_year=${year}&page=${1}&vote_count.gte=100&with_genres=${genre}`);
-    return response.data;
+    return response.data.results.sort((a, b) => b.popularity - a.popularity);
   } catch (error) {
     console.error("Error fetching movies:", error);
   }
