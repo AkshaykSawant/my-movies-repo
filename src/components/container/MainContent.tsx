@@ -12,7 +12,7 @@ const default_year = 2012;
 export const MainContent = () => {
   const selectedGenre = useGenreStore((state) => state.genre);
   const [movies, setMovies] = useState<Array<Movie>>([]);
-  const [year, setYear] = useState<number>(2012);
+  const [year, setYear] = useState<number>(default_year);
   const [hasMore, setHasMore] = useState<boolean>(true);
 
   const fetchMoreData = async () => {
@@ -31,7 +31,7 @@ export const MainContent = () => {
   const loadMovies = async (initialYear: number) => {
     try {
       setHasMore(true);
-      setYear(2012);
+      setYear(default_year);
       const results = await fetchMovieData(initialYear, selectedGenre.join());
       if (results.length === 0) {
         setHasMore(false);
