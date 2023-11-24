@@ -1,6 +1,6 @@
 .main-content {
   background-color: black;
-  height: 100%;
+  min-height: 100vh;
   overflow-y: "scroll";
   display: flex;
 }
@@ -10,4 +10,8 @@
 }
 .no-more-data {
   color: white;
+  text-align: center;
+}
+.infinite-scroll-component__outerdiv {
+  width: 100%;
 }

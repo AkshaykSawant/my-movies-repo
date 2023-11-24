@@ -22,7 +22,6 @@
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.menu-item:hover,
 .menu-item.active {
   background-color: red;
   border-color: transparent;
@@ -37,5 +36,12 @@
   }
   .menu-item {
     min-width: 15rem;
+  }
+}
+/* Enabling hover for desktop view only */
+@media (min-width: 420px) {
+  .menu-item:hover {
+    background-color: red;
+    border-color: transparent;
   }
 }

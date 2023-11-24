@@ -18,7 +18,7 @@ export const MainContent = () => {
   const fetchMoreData = async () => {
     try {
       setYear((prev) => prev + 1);
-      const results = await fetchMovieData(year + 1, selectedGenre);
+      const results = await fetchMovieData(year + 1, selectedGenre.join());
       if (results.length === 0) {
         setHasMore(false);
       }
@@ -32,7 +32,7 @@ export const MainContent = () => {
     try {
       setHasMore(true);
       setYear(2012);
-      const results = await fetchMovieData(initialYear, selectedGenre);
+      const results = await fetchMovieData(initialYear, selectedGenre.join());
       if (results.length === 0) {
         setHasMore(false);
       }
@@ -56,7 +56,7 @@ export const MainContent = () => {
         hasMore={hasMore}
         loader={<Loader />}
         endMessage={
-          <p className="no-more-data" style={{ textAlign: "center" }}>
+          <p className="no-more-data">
             <b>No more data to load...</b>
           </p>
         }

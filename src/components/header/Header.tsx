@@ -8,14 +8,26 @@ import { Genre } from "../type/CommonType";
 export const Header = () => {
   const selectedMenuItem = useGenreStore((state) => state.genre);
   const [genreList, setGenreUpdateList] = useState([]);
+
   useEffect(() => {
     (async () => {
       const response: Genre[] = await fetchGenre();
       setGenreUpdateList(response.slice(0, 6));
     })();
   }, []);
+
   const onClickHandler = (genru_filter: string) => {
-    useGenreStore.setState({ genre: genru_filter });
+    if (genru_filter) {
+      useGenreStore.setState({
+        genre: selectedMenuItem.includes(genru_filter)
+          ? selectedMenuItem.filter((val) => val !== genru_filter)
+          : [...selectedMenuItem, genru_filter],
+      });
+    } else {
+      useGenreStore.setState({
+        genre: [],
+      });
+    }
   };
 
   return (
@@ -25,7 +37,9 @@ export const Header = () => {
         <div className="menu">
           <button
             key="0000000"
-            className={`menu-item ${selectedMenuItem === "" ? "active" : ""}`}
+            className={`menu-item ${
+              selectedMenuItem.join() === "" ? "active" : ""
+            }`}
             onClick={() => onClickHandler("")}
           >
             All
@@ -34,7 +48,7 @@ export const Header = () => {
             <button
               key={genre.id}
               className={`menu-item ${
-                selectedMenuItem === genre.id ? "active" : ""
+                selectedMenuItem.includes(genre.id) ? "active" : ""
               }`}
               onClick={() => onClickHandler(genre.id)}
             >
