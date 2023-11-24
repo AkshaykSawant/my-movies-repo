@@ -19,7 +19,7 @@ const MovieCard: React.FC<Props> = ({ movie, index }) => {
         />
         <div className="movie-card-content">
           <div className="row row-title">{movie.title}</div>
-          <div className="row row-rating">{movie.popularity}</div>
+          <div className="row row-rating">{Math.round(movie.popularity)}</div>
         </div>
       </div>
     </>

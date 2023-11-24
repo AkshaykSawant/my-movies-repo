@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useGenreStore } from "../store/GenreStore";
 import "./MainContent.css";
 import { fetchMovieData } from "../api/FetchMovieList";
-import { Movie, MovieApiData } from "../type/CommonType";
+import { Movie } from "../type/CommonType";
 import MovieCard from "../card/MovieCard";
 import Loader from "../loader/Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
