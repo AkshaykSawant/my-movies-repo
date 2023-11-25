@@ -62,8 +62,17 @@ export const MainContent = () => {
         }
       >
         <div className="movie-container">
-          {movies.map((movie, index) => (
-            <MovieCard movie={movie} index={index} key={movie.id} />
+          {movies.map((movie, index, arr) => (
+            <MovieCard
+              movie={movie}
+              key={movie.id}
+              displayHeader={
+                index > 0
+                  ? movie.release_date.split("-")[0] !==
+                    arr[index - 1].release_date.split("-")[0]
+                  : true
+              }
+            />
           ))}
         </div>
       </InfiniteScroll>

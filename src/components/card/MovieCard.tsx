@@ -3,13 +3,13 @@ import { Movie } from "../type/CommonType";
 import "./MovieCard.css";
 interface Props {
   movie: Movie;
-  index: number;
+  displayHeader: boolean;
 }
 
-const MovieCard: React.FC<Props> = ({ movie, index }) => {
+const MovieCard: React.FC<Props> = ({ movie, displayHeader }) => {
   return (
     <>
-      {index % 20 === 0 && (
+      {displayHeader && (
         <h1 className="movie-year">{movie.release_date.split("-")[0]}</h1>
       )}
       <div className="movie-card">
