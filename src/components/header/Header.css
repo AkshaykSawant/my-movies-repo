@@ -12,11 +12,11 @@
 }
 
 .menu-item {
-  min-width: 4rem;
+  min-width: 0rem;
   background-color: transparent;
   color: white;
   padding: 10px;
-  margin-right: 20px;
+  margin-right: 0.2rem;
   border: 1px solid transparent;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;

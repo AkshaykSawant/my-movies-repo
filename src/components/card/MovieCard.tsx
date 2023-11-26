@@ -15,12 +15,12 @@ const MovieCard: React.FC<Props> = ({ movie, displayHeader }) => {
       )}
       <div className="movie-card">
         <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt={movie.title}
+          src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`}
+          alt={movie?.title}
         />
         <div className="movie-card-content">
-          <div className="row row-title">{movie.title}</div>
-          <div className="row row-rating">{Math.round(movie.popularity)}</div>
+          <div className="row row-title">{movie?.title}</div>
+          <div className="row row-rating">{Math.round(movie?.popularity)}</div>
         </div>
       </div>
     </>

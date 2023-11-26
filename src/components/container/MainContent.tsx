@@ -7,9 +7,8 @@ import MovieCard from "../card/MovieCard";
 import Loader from "../loader/Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const default_year = 2012;
-
 export const MainContent = () => {
+  const default_year = 2012;
   const selectedGenre = useGenreStore((state) => state.genre);
   const [movies, setMovies] = useState<Array<Movie>>([]);
   const [year, setYear] = useState<number>(default_year);
@@ -19,10 +18,9 @@ export const MainContent = () => {
     try {
       setYear((prev) => prev + 1);
       const results = await fetchMovieData(year + 1, selectedGenre.join());
-      if (results.length === 0) {
-        setHasMore(false);
-      }
-      setMovies((state) => [...state, ...results]);
+      results.length === 0
+        ? setHasMore(false)
+        : setMovies((state) => [...state, ...results]);
     } catch (error) {
       console.error("Error fetching movies:", error);
     }
@@ -33,19 +31,14 @@ export const MainContent = () => {
       setHasMore(true);
       setYear(default_year);
       const results = await fetchMovieData(initialYear, selectedGenre.join());
-      if (results.length === 0) {
-        setHasMore(false);
-      }
-      setMovies(results);
+      results.length === 0 ? setHasMore(false) : setMovies(results);
     } catch (error) {
       console.error("Error loading movies:", error);
     }
   };
 
   useEffect(() => {
-    (async () => {
-      await loadMovies(default_year);
-    })();
+    loadMovies(default_year);
   }, [selectedGenre]);
 
   return (

@@ -7,7 +7,7 @@ import { Genre } from "../type/CommonType";
 
 export const Header = () => {
   const selectedMenuItem = useGenreStore((state) => state.genre);
-  const [genreList, setGenreUpdateList] = useState([]);
+  const [genreList, setGenreUpdateList] = useState<Array<Genre>>([]);
 
   useEffect(() => {
     (async () => {
@@ -16,7 +16,7 @@ export const Header = () => {
     })();
   }, []);
 
-  const onClickHandler = (genru_filter: string) => {
+  const onClickHandler = (genru_filter: number) => {
     if (genru_filter) {
       useGenreStore.setState({
         genre: selectedMenuItem.includes(genru_filter)
@@ -40,7 +40,7 @@ export const Header = () => {
             className={`menu-item ${
               selectedMenuItem.join() === "" ? "active" : ""
             }`}
-            onClick={() => onClickHandler("")}
+            onClick={() => onClickHandler(0)}
           >
             All
           </button>
