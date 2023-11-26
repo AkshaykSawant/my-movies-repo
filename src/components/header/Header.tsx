@@ -12,7 +12,7 @@ export const Header = () => {
   useEffect(() => {
     (async () => {
       const response: Genre[] = await fetchGenre();
-      setGenreUpdateList(response.slice(0, 6));
+      setGenreUpdateList(response);
     })();
   }, []);
 

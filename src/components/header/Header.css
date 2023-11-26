@@ -26,8 +26,19 @@
 }
 
 .menu-item.active {
-  background-color: red;
+  background-color: #e52f2f;
   border-color: transparent;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.menu {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Media query for screens 420px or less */
@@ -44,17 +55,7 @@
 /* Enabling hover for desktop view only */
 @media (min-width: 420px) {
   .menu-item:hover {
-    background-color: red;
+    background-color: #e52f2f;
     border-color: transparent;
   }
-}
-/* Hide scrollbar for Chrome, Safari and Opera */
-.menu::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.menu {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }

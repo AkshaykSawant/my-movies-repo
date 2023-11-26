@@ -54,7 +54,7 @@ export const MainContent = () => {
         loader={<Loader />}
         endMessage={
           <p className="no-more-data">
-            <b>No more data to load...</b>
+            <b>No more data to load for the selected filters...</b>
           </p>
         }
       >

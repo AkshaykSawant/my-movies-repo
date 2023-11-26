@@ -17,13 +17,20 @@
 }
 
 /* Styles for the movie image */
-.movie-card img {
+.movie-img {
   width: 100%;
   border-radius: 0.5em 0.5em 0em 0em;
   height: 24rem;
   transition: transform 0.3s ease-in-out;
 }
-
+.like-img {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  top: 0.2em;
+  left: 0.3em;
+  position: relative;
+}
 .movie-card:hover {
   cursor: pointer;
   transform: scale(1.05); /* Enlarge image on hover */
@@ -83,9 +90,9 @@
     max-width: calc(50% - 20px);
     border-radius: 0.5em;
   }
-  .movie-card img {
+  .movie-img {
     max-height: 14rem;
-    border-radius: 0.5em 0.5em;
+    border-radius: 0.5em 0.5em 0em 0em;
   }
   .movie-card-title {
     height: 3rem;
