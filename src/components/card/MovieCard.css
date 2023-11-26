@@ -5,30 +5,43 @@
   width: 100%;
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
   display: flex;
+  border-radius: 0.5em;
   border: 1px solid grey;
   flex-direction: column; /* Stack items vertically by default */
+}
+
+.movie-card:hover {
+  background-color: #555; /* Change background color on hover */
 }
 
 /* Styles for the movie image */
 .movie-card img {
   width: 100%;
-  height: 18rem;
+  border-radius: 0.5em 0.5em 0em 0em;
+  height: 24rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover {
+  cursor: pointer;
+  transform: scale(1.05); /* Enlarge image on hover */
 }
 
 /* Basic styles for the movie information */
-.movie-card h2 {
-  margin: 10px 0;
-}
-.movie-card-title {
-  height: 4rem;
-  font-size: 1.5vh;
-}
 .movie-card-content {
   height: 4rem;
   background-color: black;
+  border-radius: 0em 0em 0.5em 0.5em;
+  transition: background-color 0.3s;
 }
+
+/* Add click effect */
+.movie-card:active .movie-card-content {
+  background-color: #777;
+}
+
 .row {
   display: block;
   text-align: center;
@@ -36,9 +49,11 @@
   height: 2rem;
   font-weight: 500;
 }
+
 .row-title {
   height: 2.4rem;
 }
+
 .row-rating {
   height: 1.6rem;
 }
@@ -54,7 +69,7 @@
 @media (min-width: 768px) {
   /* Desktop styles: Display 4 cards in a row */
   .movie-card {
-    max-width: calc(25% - 20px); /* Adjust the width and margin as needed */
+    max-width: calc(25% - 20px);
   }
 
   .movie-card:nth-child(4n) {
@@ -65,13 +80,18 @@
 @media (max-width: 767px) {
   /* Mobile styles: Display 2 cards in a row */
   .movie-card {
-    max-width: calc(50% - 20px); /* Adjust the width and margin as needed */
+    max-width: calc(50% - 20px);
+    border-radius: 0.5em;
   }
   .movie-card img {
-    max-height: 11rem;
+    max-height: 14rem;
+    border-radius: 0.5em 0.5em;
   }
   .movie-card-title {
     height: 3rem;
     font-size: 1.3vh;
+  }
+  .movie-card-content {
+    border-radius: 0em 0em 0.5em 0.5em;
   }
 }

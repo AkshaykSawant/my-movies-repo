@@ -1,6 +1,7 @@
 import React from "react";
 import { Movie } from "../type/CommonType";
 import "./MovieCard.css";
+
 interface Props {
   movie: Movie;
   displayHeader: boolean;
