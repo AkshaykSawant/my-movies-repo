@@ -21,7 +21,7 @@ const MovieCard: React.FC<Props> = ({ movie, displayHeader }) => {
           alt={movie?.title}
         />
         <div className="movie-card-content">
-          <div className="row row-title">{movie?.title}</div>
+          <div className="line-clamp row row-title">{movie?.title}</div>
           <div className="row row-rating">
             {Math.round(movie?.popularity)}
             <img className="like-img" src={require("./like.png")} alt="Likes" />

@@ -83,7 +83,14 @@
     margin-right: 0; /* Clear the margin for the last card in each row */
   }
 }
-
+.line-clamp {
+  font-size: 0.9em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+}
 @media (max-width: 767px) {
   /* Mobile styles: Display 2 cards in a row */
   .movie-card {

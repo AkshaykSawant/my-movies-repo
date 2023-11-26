@@ -37,7 +37,7 @@ export const Header = () => {
         <div className="menu">
           <button
             key="0000000"
-            className={`menu-item ${
+            className={`line-clamp menu-item ${
               selectedMenuItem.join() === "" ? "active" : ""
             }`}
             onClick={() => onClickHandler(0)}
@@ -47,7 +47,7 @@ export const Header = () => {
           {genreList.map((genre) => (
             <button
               key={genre.id}
-              className={`menu-item ${
+              className={`line-clamp-item menu-item ${
                 selectedMenuItem.includes(genre.id) ? "active" : ""
               }`}
               onClick={() => onClickHandler(genre.id)}
