@@ -77,7 +77,7 @@
   overflow: hidden;
   text-align: center;
 }
-@media (min-width: 748px) {
+@media (min-width: 768px) {
   /* Desktop styles: Display 4 cards in a row */
   .movie-card {
     max-width: calc(25% - 28px);
@@ -91,7 +91,7 @@
   }
 }
 
-@media (min-width: 400px) and (max-width: 748px) {
+@media (min-width: 480px) and (max-width: 768px) {
   /* Tablet styles: Display 2 cards in a row */
   .movie-card {
     max-width: calc(50% - 20px);
@@ -111,7 +111,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   /* Mobile styles: Display 2 cards in a row */
   .movie-card {
     max-width: calc(50% - 20px);
