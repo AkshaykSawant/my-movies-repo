@@ -63,7 +63,7 @@
 /* Enabling hover for desktop view only */
 @media (min-width: 420px) {
   .menu-item:hover {
-    background-color: #e52f2f;
+    background-color: #777;
     border-color: transparent;
   }
 }

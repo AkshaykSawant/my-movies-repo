@@ -2,7 +2,7 @@
   background-color: #333;
   color: white;
   width: 100%;
-  margin: 10px;
+  margin: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, background-color 0.3s;
   display: flex;
@@ -69,16 +69,6 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  /* Desktop styles: Display 4 cards in a row */
-  .movie-card {
-    max-width: calc(25% - 20px);
-  }
-
-  .movie-card:nth-child(4n) {
-    margin-right: 0; /* Clear the margin for the last card in each row */
-  }
-}
 .line-clamp {
   font-size: 0.9em;
   display: -webkit-box;
@@ -87,14 +77,49 @@
   overflow: hidden;
   text-align: center;
 }
-@media (max-width: 767px) {
+@media (min-width: 748px) {
+  /* Desktop styles: Display 4 cards in a row */
+  .movie-card {
+    max-width: calc(25% - 28px);
+  }
+
+  .movie-card:nth-child(4n) {
+    margin-right: 7px; /* Clear the margin for the last card in each row */
+  }
+  .line-clamp {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 748px) {
+  /* Tablet styles: Display 2 cards in a row */
+  .movie-card {
+    max-width: calc(50% - 20px);
+    border-radius: 0.5em;
+    margin: 10px;
+  }
+  .movie-img {
+    max-height: 17rem;
+    border-radius: 0.5em 0.5em 0em 0em;
+  }
+  .movie-card-title {
+    height: 3rem;
+    font-size: 1.3vh;
+  }
+  .movie-card-content {
+    border-radius: 0em 0em 0.5em 0.5em;
+  }
+}
+
+@media (max-width: 400px) {
   /* Mobile styles: Display 2 cards in a row */
   .movie-card {
     max-width: calc(50% - 20px);
     border-radius: 0.5em;
+    margin: 10px;
   }
   .movie-img {
-    max-height: 14rem;
+    max-height: 10rem;
     border-radius: 0.5em 0.5em 0em 0em;
   }
   .movie-card-title {
