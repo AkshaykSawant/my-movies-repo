@@ -28,7 +28,7 @@
   padding: 10px;
   border-radius: 0.5rem;
   margin-right: 0.2rem;
-  border: 1px solid transparent;
+  border: 1px solid grey;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
@@ -45,8 +45,8 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .menu {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Media query for screens 420px or less */

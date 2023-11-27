@@ -37,7 +37,7 @@ export const Header = () => {
         <div className="menu">
           <button
             key="0000000"
-            className={`line-clamp menu-item ${
+            className={`line-clamp-item menu-item ${
               selectedMenuItem.join() === "" ? "active" : ""
             }`}
             onClick={() => onClickHandler(0)}

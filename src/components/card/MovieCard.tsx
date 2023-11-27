@@ -1,7 +1,6 @@
 import React from "react";
 import { Movie } from "../type/CommonType";
 import "./MovieCard.css";
-//import like from "./like.png";
 
 interface Props {
   movie: Movie;
