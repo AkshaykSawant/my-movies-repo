@@ -10,6 +10,6 @@
 /* Media query for screens 420px or less */
 @media (max-width: 420px) {
   .app-title {
-    font-size: 1.3em;
+    font-size: 1.8em;
   }
 }
