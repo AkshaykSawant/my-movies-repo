@@ -16,3 +16,9 @@
 .infinite-scroll-component__outerdiv {
   width: 100%;
 }
+@media (max-width: 400px) {
+  /* Mobile styles: Display 2 cards in a row */
+  .main-content {
+    padding: 0.3rem;
+  }
+}
