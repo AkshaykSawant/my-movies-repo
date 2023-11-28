@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { AppTitle } from "./AppTitle";
 import { useGenreStore } from "../store/GenreStore";
@@ -16,7 +16,7 @@ export const Header = () => {
     })();
   }, []);
 
-  const onClickHandler = useCallback((genru_filter: number) => {
+  const onClickHandler = (genru_filter: number) => {
     if (genru_filter) {
       useGenreStore.setState({
         genre: selectedMenuItem.includes(genru_filter)
@@ -28,7 +28,7 @@ export const Header = () => {
         genre: [],
       });
     }
-  }, []);
+  };
 
   return (
     <>
