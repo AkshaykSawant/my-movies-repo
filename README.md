@@ -12,12 +12,12 @@ https://akshayksawant.github.io/my-movies-repo/
 
 # Requirement/Functionality Covered :
 
-1. Created custom UI components for the app, using React.
+1. Created custom UI components for the app, using React & TypeScript.
 2. To displayed a list of movies sorted in descending order of popularity.
 3. To show the movie title & rating related to the movie in each card.
 4. To load a total of only 20 movies for each year.
 5. By default, when a user lands on the page, display a list of movies of the year 2012.
-6. Implemented smooth scrolling behavior to load more movies as the user scrolls in DOWN direction.
+6. Implemented smooth scrolling behavior to load more movies as the user scrolls downwards.
 7. When a user selects one or more genres, the list should only display movies of the selected genres.
 8. Ensuring smooth scrolling even when more and more movies are loaded in the DOM.
 9. Added Type checking using TypeScript.
@@ -26,4 +26,4 @@ https://akshayksawant.github.io/my-movies-repo/
 
 # Requirement/Functionality Not Covered :
 
-1. To load more movies as the user scrolls in UP direction
+1. To load more movies as the user scrolls upwards
