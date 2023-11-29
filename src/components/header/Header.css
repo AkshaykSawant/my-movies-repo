@@ -22,8 +22,9 @@
 }
 
 .menu-item {
+  font-size: large;
   font-family: "Helvetica";
-  min-width: 6rem;
+  min-width: fit-content;
   font-weight: 700;
   background-color: transparent;
   color: white;
@@ -63,7 +64,7 @@
     justify-content: space-between;
   }
   .menu-item {
-    min-width: 6.5rem;
+    min-width: fit-content;
   }
 }
 /* Enabling hover for desktop view only */

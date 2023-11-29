@@ -19,7 +19,7 @@
 .movie-img {
   width: 100%;
   border-radius: 0.5em 0.5em 0em 0em;
-  height: 24rem;
+  aspect-ratio: 2/3;
   transition: transform 0.3s ease-in-out;
 }
 .like-img {
