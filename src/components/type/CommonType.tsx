@@ -106,3 +106,8 @@ export interface ApiResponse {
     [key: string]: any;
   };
 }
+
+export type DebounceFunction<T extends (...args: any[]) => any> = (
+  func: T,
+  timeout?: number
+) => (...args: Parameters<T>) => void;

@@ -4,6 +4,7 @@ import { AppTitle } from "./AppTitle";
 import { useGenreStore } from "../store/GenreStore";
 import { fetchGenre } from "../api/FetchMovieList";
 import { Genre } from "../type/CommonType";
+import { SearchBar } from "./Searchbar";
 
 export const Header = () => {
   const selectedMenuItem = useGenreStore((state) => state.genre);
@@ -31,32 +32,35 @@ export const Header = () => {
   };
 
   return (
-    <div className="header-main">
+    <>
       <AppTitle />
-      <div className="header">
-        <div className="menu">
-          <button
-            key="0000000"
-            className={`line-clamp-item menu-item ${
-              selectedMenuItem.join() === "" ? "active" : ""
-            }`}
-            onClick={() => onClickHandler(0)}
-          >
-            All
-          </button>
-          {genreList.map((genre) => (
+      <div className="header-main">
+        <div className="header">
+          <div className="menu">
             <button
-              key={genre.id}
+              key="0000000"
               className={`line-clamp-item menu-item ${
-                selectedMenuItem.includes(genre.id) ? "active" : ""
+                selectedMenuItem.join() === "" ? "active" : ""
               }`}
-              onClick={() => onClickHandler(genre.id)}
+              onClick={() => onClickHandler(0)}
             >
-              {genre.name}
+              All
             </button>
-          ))}
+            {genreList.map((genre) => (
+              <button
+                key={genre.id}
+                className={`line-clamp-item menu-item ${
+                  selectedMenuItem.includes(genre.id) ? "active" : ""
+                }`}
+                onClick={() => onClickHandler(genre.id)}
+              >
+                {genre.name}
+              </button>
+            ))}
+          </div>
         </div>
+        <SearchBar />
       </div>
-    </div>
+    </>
   );
 };

@@ -9,6 +9,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 export const MainContent = () => {
   const default_year = 2012;
+  const searchValue = useGenreStore((state) => state.searchValue);
   const selectedGenre = useGenreStore((state) => state.genre);
   const [movies, setMovies] = useState<Array<Movie>>([]);
   const [year, setYear] = useState<number>(default_year);
@@ -51,7 +52,7 @@ export const MainContent = () => {
         dataLength={movies.length}
         next={fetchMoreData}
         hasMore={hasMore}
-        loader={<Loader />}
+        loader={searchValue ? <></> : <Loader />}
         endMessage={
           <p className="no-more-data">
             <b>No more data to load for the selected filters...</b>
@@ -59,18 +60,21 @@ export const MainContent = () => {
         }
       >
         <div className="movie-container">
-          {movies.map((movie, index, arr) => (
-            <MovieCard
-              movie={movie}
-              key={movie.id}
-              displayHeader={
-                index > 0
-                  ? movie.release_date.split("-")[0] !==
-                    arr[index - 1].release_date.split("-")[0]
-                  : true
-              }
-            />
-          ))}
+          {movies.map(
+            (movie, index, arr) =>
+              movie.title.toLowerCase().includes(searchValue.toLowerCase()) && (
+                <MovieCard
+                  movie={movie}
+                  key={movie.id}
+                  displayHeader={
+                    index > 0
+                      ? movie.release_date.split("-")[0] !==
+                        arr[index - 1].release_date.split("-")[0]
+                      : true
+                  }
+                />
+              )
+          )}
         </div>
       </InfiniteScroll>
     </div>
