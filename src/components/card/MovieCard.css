@@ -1,9 +1,8 @@
 .movie-card {
-  background-color: #333;
+  background-color: #292929;
   color: white;
   width: 100%;
   margin: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, background-color 0.3s;
   display: flex;
   border-radius: 0.5em;
@@ -13,6 +12,8 @@
 
 .movie-card:hover {
   background-color: #555;
+  box-shadow: 0px 4px 10px 5px rgb(228 228 228 / 20%),
+    0 6px 20px 0 rgb(246 246 246 / 19%);
 }
 
 .movie-img {
@@ -99,7 +100,7 @@
     margin: 10px;
   }
   .movie-img {
-    max-height: 17rem;
+    max-height: 20rem;
     border-radius: 0.5em 0.5em 0em 0em;
   }
   .movie-card-title {
@@ -119,7 +120,7 @@
     margin: 10px;
   }
   .movie-img {
-    max-height: 10rem;
+    max-height: 14rem;
     border-radius: 0.5em 0.5em 0em 0em;
   }
   .movie-card-title {

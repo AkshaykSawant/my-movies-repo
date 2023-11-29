@@ -31,7 +31,7 @@ export const Header = () => {
   };
 
   return (
-    <>
+    <div className="header-main">
       <AppTitle />
       <div className="header">
         <div className="menu">
@@ -57,6 +57,6 @@ export const Header = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
