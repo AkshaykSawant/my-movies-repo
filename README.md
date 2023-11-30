@@ -23,6 +23,7 @@ https://akshayksawant.github.io/my-movies-repo/
 9. Added Type checking using TypeScript.
 10. Interactive Movie cards which has animations on-hover and on-clicked.
 11. Responsive App which supports both desktop and mobile view.
+12. Added search bar to search movies by name. The search is limited to the loaded data due to API constraints (lacks name/title query support)
 
 # Requirement/Functionality Not Covered :
 
